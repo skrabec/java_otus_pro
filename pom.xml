@@ -17,10 +17,11 @@
         <webdriver.manager.version>5.9.2</webdriver.manager.version>
         <assertj.version>3.26.3</assertj.version>
         <guice.version>7.0.0</guice.version>
-        <surefire.version>2.22.2</surefire.version>
+        <surefire.version>3.5.0</surefire.version>
         <compiler.version>3.8.1</compiler.version>
         <checkstyle.version>3.4.0</checkstyle.version>
         <spotbugs.version>4.8.5.0</spotbugs.version>
+        <browser>chrome</browser>
     </properties>
 
     <dependencies>
@@ -50,6 +51,12 @@
             <artifactId>guice</artifactId>
             <version>${guice.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-core</artifactId>
+            <version>3.26.3</version>
+            <scope>compile</scope>
+        </dependency>
     </dependencies>
 
     <build>
@@ -60,7 +67,7 @@
                 <version>${surefire.version}</version>
                 <configuration>
                     <systemPropertyVariables>
-                        <browser>chrome</browser>
+                        <browser>${browser}</browser>
                         <base.url>https://otus.ru</base.url>
                     </systemPropertyVariables>
                 </configuration>

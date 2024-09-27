@@ -8,7 +8,6 @@ import pages.MainPage;
 
 @ExtendWith(UIExtensions.class)
 public class MainPageTest {
-
     @Inject
     private MainPage mainPage;
 
@@ -18,7 +17,8 @@ public class MainPageTest {
                 .open()
                 .getLessonTitleByIndex(1);
 
-        System.out.println(lessonTitle);
+        mainPage.clickLessonTitleByTitle(lessonTitle)
+                .pageHeaderShouldbeSameAs(lessonTitle);
     }
 
 }

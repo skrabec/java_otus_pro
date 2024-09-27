@@ -3,18 +3,28 @@ package modules;
 import com.google.inject.AbstractModule;
 import com.google.inject.Provides;
 import com.google.inject.Singleton;
+import factory.WebDriverFactory;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+import pages.LessonCardPage;
 import pages.MainPage;
 
 public class GuicePageModules extends AbstractModule {
 
-    private WebDriver driver = new ChromeDriver();
+    @Provides
+    private WebDriver getDriver() {
+        return new WebDriverFactory().create();
+    }
+
+    @Singleton
+    @Provides
+    public LessonCardPage getLessonCardPage() {
+        return new LessonCardPage(getDriver());
+    }
 
     @Singleton
     @Provides
     public MainPage getMainPage() {
-        return new MainPage(driver);
+        return new MainPage(getDriver());
     }
 
 }
