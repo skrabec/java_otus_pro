@@ -22,7 +22,7 @@ public abstract class AbstractCommon<T> {
         PageFactory.initElements(driver, this);
     }
 
-    protected WebElement findBy(By locator) {
+    protected WebElement $findBy(By locator) {
         return driver.findElement(locator);
     }
 }
