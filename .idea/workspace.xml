@@ -4,21 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21dc6ca3-cab8-4aea-ba80-575756339388" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/annotations/Path.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/common/AbstractCommon.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/exceptions/InvalidPathException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/extensions/UIExtensions.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/modules/GuicePageModules.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pages/AbstractBasePage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pages/LessonCardPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pages/MainPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/checkstyle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/main/MainPageTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="21dc6ca3-cab8-4aea-ba80-575756339388" name="Changes" comment="Lesson 6">
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,12 +18,33 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="AnnotationType" />
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "skrabec"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="9e997cf3-9379-4ce9-90c4-031e9a12ce99" />
+        <option name="url" value="https://github.com/skrabec/java_otus_pro.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
+  <component name="KubernetesApiProvider"><![CDATA[{
+  "isMigrated": true
+}]]></component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
@@ -48,11 +58,14 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "JUnit.MainPageTest.mainPageTest.executor": "Run",
+    "Maven.java_otus_pro [clean,test,-DforkCount=0...].executor": "Run",
     "Maven.java_otus_pro [clean].executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
+    "last_directory_selection": "C:/Users/skrab/IdeaProjects/java_otus_pro/src/test/java",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -61,7 +74,7 @@
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "editor.preferences.tabs",
+    "settings.editor.selected.configurable": "preferences.keymap",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -71,7 +84,7 @@
       <recent name="C:\Users\skrab\IdeaProjects\java_otus_pro" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Maven.java_otus_pro [clean,test,-DforkCount=0...]">
     <configuration name="MainPageTest.mainPageTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="java_otus_pro" />
       <extension name="coverage">
@@ -88,6 +101,43 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="java_otus_pro [clean,test,-DforkCount=0...]" type="MavenRunConfiguration" factoryName="Maven" nameIsGenerated="true">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="cmdOptions" />
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="clean" />
+                <option value="test" />
+                <option value="-DforkCount=0" />
+                <option value="-Dtest=MainPageTest#" />
+              </list>
+            </option>
+            <option name="multimoduleDir" />
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="projectsCmdOptionValues">
+              <list />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="JUnit.MainPageTest.mainPageTest" />
+      <item itemvalue="Maven.java_otus_pro [clean,test,-DforkCount=0...]" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.MainPageTest.mainPageTest" />
@@ -110,11 +160,55 @@
       <option name="presentableId" value="Default" />
       <updated>1726560580549</updated>
       <workItem from="1726560581552" duration="2032000" />
-      <workItem from="1726571259567" duration="12441000" />
+      <workItem from="1726571259567" duration="23801000" />
     </task>
+    <task id="LOCAL-00001" summary="Lesson 5">
+      <option name="closed" value="true" />
+      <created>1727263941176</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1727263941176</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Lesson 6">
+      <option name="closed" value="true" />
+      <created>1727434577762</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1727434577762</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Lesson 6">
+      <option name="closed" value="true" />
+      <created>1727434666218</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1727434666218</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Lesson 5" />
+    <MESSAGE value="Lesson 6" />
+    <option name="LAST_COMMIT_MESSAGE" value="Lesson 6" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>
