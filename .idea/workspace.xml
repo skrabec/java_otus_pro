@@ -4,23 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21dc6ca3-cab8-4aea-ba80-575756339388" name="Changes" comment="Lesson 6">
-      <change afterPath="$PROJECT_DIR$/src/main/java/annotations/components/Component.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/components/AbsComponent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/components/popups/IPopUp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/components/popups/PopupHeaderSubMenu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/components/static_components/AbsStaticComponent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/components/static_components/HeaderMenuComponent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/data/menu/HeaderMenuData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/waiters/Waiter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/common/AbstractCommon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/common/AbstractCommon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/extensions/UIExtensions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/extensions/UIExtensions.java" afterDir="false" />
+    <list default="true" id="21dc6ca3-cab8-4aea-ba80-575756339388" name="Changes" comment="Lesson 7">
+      <change beforePath="$PROJECT_DIR$/src/main/java/components/AbsComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/components/AbsComponent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/components/popups/PopupHeaderSubMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/components/popups/PopupHeaderSubMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/components/static_components/AbsStaticComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/components/staticcomponents/AbsStaticComponent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/components/static_components/HeaderMenuComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/components/staticcomponents/HeaderMenuComponent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/modules/GuicePageModules.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modules/GuicePageModules.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pages/AbstractBasePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/AbstractBasePage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pages/MainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/MainPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/main/MainPageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/main/MainPageTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/waiters/Waiter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/waiters/Waiter.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +63,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "JUnit.MainPageTest.mainPageTest.executor": "Run",
-    "Maven.java_otus_pro [clean,test,-DforkCount=0...].executor": "Run",
+    "Maven.java_otus_pro [clean,test,-DforkCount=0...].executor": "Debug",
     "Maven.java_otus_pro [clean].executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -174,7 +166,7 @@
       <updated>1726560580549</updated>
       <workItem from="1726560581552" duration="2032000" />
       <workItem from="1726571259567" duration="23801000" />
-      <workItem from="1727434753591" duration="8025000" />
+      <workItem from="1727434753591" duration="8936000" />
     </task>
     <task id="LOCAL-00001" summary="Lesson 5">
       <option name="closed" value="true" />
@@ -208,7 +200,15 @@
       <option name="project" value="LOCAL" />
       <updated>1727434813985</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Lesson 7">
+      <option name="closed" value="true" />
+      <created>1727522234424</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1727522234424</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -228,7 +228,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Lesson 5" />
     <MESSAGE value="Lesson 6" />
-    <option name="LAST_COMMIT_MESSAGE" value="Lesson 6" />
+    <MESSAGE value="Lesson 7" />
+    <option name="LAST_COMMIT_MESSAGE" value="Lesson 7" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

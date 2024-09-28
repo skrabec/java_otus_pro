@@ -1,4 +1,4 @@
-package components.static_components;
+package components.staticcomponents;
 
 import annotations.components.Component;
 import components.AbsComponent;
