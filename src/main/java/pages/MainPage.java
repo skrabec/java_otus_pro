@@ -1,7 +1,6 @@
 package pages;
 
 import annotations.Path;
-import com.google.inject.Inject;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -11,9 +10,6 @@ import java.util.List;
 
 @Path("/")
 public class MainPage extends AbstractBasePage<MainPage> {
-
-    @Inject
-    private LessonCardPage lessonCardPage;
 
     public MainPage(WebDriver driver) {
         super(driver);
@@ -27,12 +23,10 @@ public class MainPage extends AbstractBasePage<MainPage> {
         return lessonItems.get(--index).findElement(By.xpath(".//h5")).getText();
     }
 
-    public LessonCardPage clickLessonTitleByTitle(String title) {
+    public void clickLessonTitleByTitle(String title) {
         String lessonCardLocatorTemplate = String.format("//a[not(@class)][contains(@href, '/lessons')][.//*[text()='%s']]", title);
 
         findBy(By.xpath(lessonCardLocatorTemplate)).click();
-
-        return lessonCardPage;
     }
 
 }

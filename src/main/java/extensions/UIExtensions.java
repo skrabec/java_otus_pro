@@ -1,7 +1,7 @@
 package extensions;
 
 import com.google.inject.Guice;
-import com.google.inject.Inject;
+import com.google.inject.Injector;
 import modules.GuicePageModules;
 import org.junit.jupiter.api.extension.AfterEachCallback;
 import org.junit.jupiter.api.extension.BeforeEachCallback;
@@ -10,19 +10,25 @@ import org.openqa.selenium.WebDriver;
 
 public class UIExtensions implements BeforeEachCallback, AfterEachCallback {
 
-    @Inject
-    private WebDriver driver;
+    private Injector injector;
 
     @Override
     public void afterEach(ExtensionContext context) {
-        if (driver != null) {
-            driver.close();
-            driver.quit();
-        }
+        context.getTestInstance()
+                .ifPresent(instance -> {
+                    WebDriver driver = injector.getProvider(WebDriver.class).get();
+                    if (driver != null) {
+                        driver.quit();
+                    }
+                });
     }
 
     @Override
     public void beforeEach(ExtensionContext context) {
-        Guice.createInjector(new GuicePageModules()).injectMembers(context.getTestInstance().get());
+        context.getTestInstance()
+                .ifPresent(instance -> {
+                    injector = Guice.createInjector(new GuicePageModules());
+                    injector.injectMembers(instance);
+                });
     }
 }
