@@ -5,14 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="21dc6ca3-cab8-4aea-ba80-575756339388" name="Changes" comment="Lesson 7">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/components/AbsComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/components/AbsComponent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/components/popups/PopupHeaderSubMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/components/popups/PopupHeaderSubMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/components/static_components/AbsStaticComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/components/staticcomponents/AbsStaticComponent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/components/static_components/HeaderMenuComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/components/staticcomponents/HeaderMenuComponent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/modules/GuicePageModules.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modules/GuicePageModules.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pages/AbstractBasePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/AbstractBasePage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pages/MainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/MainPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/waiters/Waiter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/waiters/Waiter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/main/MainPageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/main/MainPageTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,12 +60,12 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "JUnit.MainPageTest.mainPageTest.executor": "Run",
-    "Maven.java_otus_pro [clean,test,-DforkCount=0...].executor": "Debug",
+    "Maven.java_otus_pro [clean,test,-DforkCount=0...].executor": "Run",
     "Maven.java_otus_pro [clean].executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "assignment__1",
     "kotlin-language-version-configured": "true",
     "last_directory_selection": "C:/Users/skrab/IdeaProjects/java_otus_pro/src/test/java",
     "node.js.detected.package.eslint": "true",
@@ -148,6 +145,9 @@
         <item itemvalue="JUnit.MainPageTest.mainPageTest" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SeleniumInternalSettingsState">
+    <option name="lastUrl" value="https://otus.ru/catalog/courses" />
   </component>
   <component name="SharedIndexes">
     <attachedChunks>

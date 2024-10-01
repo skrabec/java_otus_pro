@@ -20,9 +20,6 @@ public abstract class AbstractBasePage<T> extends AbstractCommon<T> {
         super(driver);
     }
 
-    //  @FindBy(tagName = "h1")
-    //  private WebElement headerPage;
-
     private String getPath(){
         Path path = getClass().getAnnotation(Path.class);
         if (path == null) {
@@ -53,7 +50,8 @@ public abstract class AbstractBasePage<T> extends AbstractCommon<T> {
         return (T) this;
     }
 
-    public T pageHeaderShouldbeSameAs(String title) {
+    public T pageHeaderShouldbeSameAs(String title) throws InterruptedException {
+        Thread.sleep(1000);
         assertThat(findBy(By.tagName("h1")).getText())
                 .as("Header of page should be {}", title)
                 .isEqualTo(title);

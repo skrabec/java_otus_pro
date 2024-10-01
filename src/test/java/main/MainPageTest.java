@@ -16,10 +16,10 @@ public class MainPageTest {
     private LessonCardPage lessonCardPage;
 
     @Test
-    public void mainPageTest() {
+    public void mainPageTest() throws InterruptedException {
         String lessonTitle = mainPage
                 .open()
-                .getLessonTitleByIndex(1);
+                .getLessonTitleByIndex(2);
 
         mainPage.clickLessonTitleByTitle(lessonTitle);
         lessonCardPage.pageHeaderShouldbeSameAs(lessonTitle);
