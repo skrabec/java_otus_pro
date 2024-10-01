@@ -4,6 +4,7 @@ import com.google.inject.Inject;
 import extensions.UIExtensions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import pages.CoursesPage;
 import pages.LessonCardPage;
 import pages.MainPage;
 
@@ -15,13 +16,16 @@ public class MainPageTest {
     @Inject
     private LessonCardPage lessonCardPage;
 
+    @Inject
+    private CoursesPage coursesPage;
+
     @Test
-    public void mainPageTest() throws InterruptedException {
-        String lessonTitle = mainPage
+    public void coursesPageTest() throws InterruptedException {
+        String lessonTitle = coursesPage
                 .open()
                 .getLessonTitleByIndex(2);
 
-        mainPage.clickLessonTitleByTitle(lessonTitle);
+        coursesPage.clickLessonTitleByTitle(lessonTitle);
         lessonCardPage.pageHeaderShouldbeSameAs(lessonTitle);
     }
 

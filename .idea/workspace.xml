@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21dc6ca3-cab8-4aea-ba80-575756339388" name="Changes" comment="Lesson 7">
+    <list default="true" id="21dc6ca3-cab8-4aea-ba80-575756339388" name="Changes" comment="Assigment 1.1">
+      <change afterPath="$PROJECT_DIR$/src/main/java/pages/CoursesPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/components/AbsComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/components/AbsComponent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pages/AbstractBasePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/AbstractBasePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/modules/GuicePageModules.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modules/GuicePageModules.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pages/MainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/MainPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/main/MainPageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/main/MainPageTest.java" afterDir="false" />
     </list>
@@ -20,8 +20,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="AnnotationType" />
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -208,7 +208,15 @@
       <option name="project" value="LOCAL" />
       <updated>1727522234424</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Assigment 1.1">
+      <option name="closed" value="true" />
+      <created>1727807193610</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1727807193610</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -229,7 +237,8 @@
     <MESSAGE value="Lesson 5" />
     <MESSAGE value="Lesson 6" />
     <MESSAGE value="Lesson 7" />
-    <option name="LAST_COMMIT_MESSAGE" value="Lesson 7" />
+    <MESSAGE value="Assigment 1.1" />
+    <option name="LAST_COMMIT_MESSAGE" value="Assigment 1.1" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
