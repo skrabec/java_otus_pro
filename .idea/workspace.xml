@@ -4,12 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21dc6ca3-cab8-4aea-ba80-575756339388" name="Changes" comment="Assigment 1.1">
-      <change afterPath="$PROJECT_DIR$/src/main/java/pages/CoursesPage.java" afterDir="false" />
+    <list default="true" id="21dc6ca3-cab8-4aea-ba80-575756339388" name="Changes" comment="Assigment 1.1 - refactoring, adding CoursesPage, codestyle fixes">
+      <change afterPath="$PROJECT_DIR$/src/main/java/data/LessonCard.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/modules/GuicePageModules.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modules/GuicePageModules.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/components/AbsComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/components/AbsComponent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/components/popups/PopupHeaderSubMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/components/popups/PopupHeaderSubMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/AbstractBasePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/AbstractBasePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/CoursesPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/CoursesPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pages/MainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/MainPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/main/MainPageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/main/MainPageTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/waiters/Waiter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/waiters/Waiter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/main/MainPageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/main/Assignment1Test.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +64,10 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "JUnit.Assignment1Test.executor": "Run",
+    "JUnit.MainPageTest.coursesPageTest.executor": "Debug",
     "JUnit.MainPageTest.mainPageTest.executor": "Run",
+    "JUnit.MainPageTest.searchEarliestAndLatestCoursesTest.executor": "Run",
     "Maven.java_otus_pro [clean,test,-DforkCount=0...].executor": "Run",
     "Maven.java_otus_pro [clean].executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
@@ -87,7 +95,7 @@
     </key>
   </component>
   <component name="RunManager" selected="Maven.java_otus_pro [clean,test,-DforkCount=0...]">
-    <configuration name="MainPageTest.mainPageTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Assignment1Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="java_otus_pro" />
       <extension name="coverage">
         <pattern>
@@ -96,8 +104,55 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="main" />
-      <option name="MAIN_CLASS_NAME" value="main.MainPageTest" />
+      <option name="MAIN_CLASS_NAME" value="main.Assignment1Test" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Assignment1Test.coursesPageTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="java_otus_pro" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="main.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="main" />
+      <option name="MAIN_CLASS_NAME" value="main.Assignment1Test" />
+      <option name="METHOD_NAME" value="coursesPageTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Assignment1Test.mainPageTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="java_otus_pro" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="main.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="main" />
+      <option name="MAIN_CLASS_NAME" value="main.Assignment1Test" />
       <option name="METHOD_NAME" value="mainPageTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Assignment1Test.searchEarliestAndLatestCoursesTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="java_otus_pro" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="main.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="main" />
+      <option name="MAIN_CLASS_NAME" value="main.Assignment1Test" />
+      <option name="METHOD_NAME" value="searchEarliestAndLatestCoursesTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -137,12 +192,18 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="JUnit.MainPageTest.mainPageTest" />
+      <item itemvalue="JUnit.Assignment1Test" />
+      <item itemvalue="JUnit.Assignment1Test.coursesPageTest" />
+      <item itemvalue="JUnit.Assignment1Test.mainPageTest" />
+      <item itemvalue="JUnit.Assignment1Test.searchEarliestAndLatestCoursesTest" />
       <item itemvalue="Maven.java_otus_pro [clean,test,-DforkCount=0...]" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.MainPageTest.mainPageTest" />
+        <item itemvalue="JUnit.Assignment1Test" />
+        <item itemvalue="JUnit.Assignment1Test.searchEarliestAndLatestCoursesTest" />
+        <item itemvalue="JUnit.Assignment1Test.coursesPageTest" />
+        <item itemvalue="JUnit.Assignment1Test.mainPageTest" />
       </list>
     </recent_temporary>
   </component>
@@ -216,7 +277,15 @@
       <option name="project" value="LOCAL" />
       <updated>1727807193610</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Assigment 1.1 - refactoring, adding CoursesPage, codestyle fixes">
+      <option name="closed" value="true" />
+      <created>1727808220764</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1727808220764</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -238,7 +307,8 @@
     <MESSAGE value="Lesson 6" />
     <MESSAGE value="Lesson 7" />
     <MESSAGE value="Assigment 1.1" />
-    <option name="LAST_COMMIT_MESSAGE" value="Assigment 1.1" />
+    <MESSAGE value="Assigment 1.1 - refactoring, adding CoursesPage, codestyle fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Assigment 1.1 - refactoring, adding CoursesPage, codestyle fixes" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
