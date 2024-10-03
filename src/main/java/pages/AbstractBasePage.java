@@ -1,13 +1,13 @@
 package pages;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
 import annotations.Path;
 import annotations.PathTemplate;
 import common.AbstractCommon;
 import exceptions.InvalidPathException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-
-import static org.assertj.core.api.Assertions.assertThat;
 
 public abstract class AbstractBasePage<T> extends AbstractCommon<T> {
 

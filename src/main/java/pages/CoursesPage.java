@@ -1,5 +1,7 @@
 package pages;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
 import annotations.Path;
 import data.LessonCard;
 import org.jsoup.Jsoup;
@@ -8,7 +10,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -21,8 +22,6 @@ import java.util.Optional;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
-
-import static org.assertj.core.api.Assertions.assertThat;
 
 
 

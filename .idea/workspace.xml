@@ -5,11 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="21dc6ca3-cab8-4aea-ba80-575756339388" name="Changes" comment="Assigment 1.2 -fix due linter">
-      <change afterPath="$PROJECT_DIR$/src/main/java/listeners/CommonListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/components/AbsComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/components/AbsComponent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/components/popups/PopupHeaderSubMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/components/popups/PopupHeaderSubMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/factory/WebDriverFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/factory/WebDriverFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/listeners/CommonListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/listeners/CommonListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/AbstractBasePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/AbstractBasePage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pages/CoursesPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/CoursesPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pages/MainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/MainPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/waiters/Waiter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/waiters/Waiter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/main/Assignment1Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/main/Assignment1Test.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -58,33 +62,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;JUnit.Assignment1Test.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.Assignment1Test.openRandomCategoryTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.MainPageTest.coursesPageTest.executor&quot;: &quot;Debug&quot;,
-    &quot;JUnit.MainPageTest.mainPageTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.MainPageTest.searchEarliestAndLatestCoursesTest.executor&quot;: &quot;Run&quot;,
-    &quot;Maven.java_otus_pro [clean,test,-DforkCount=0...].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.java_otus_pro [clean].executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;assignment__1&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_directory_selection&quot;: &quot;C:/Users/skrab/IdeaProjects/java_otus_pro/src/test/java&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.tabs&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "JUnit.Assignment1Test.coursesPageTest.executor": "Run",
+    "JUnit.Assignment1Test.executor": "Run",
+    "JUnit.Assignment1Test.openRandomCategoryTest.executor": "Run",
+    "JUnit.MainPageTest.coursesPageTest.executor": "Debug",
+    "JUnit.MainPageTest.mainPageTest.executor": "Run",
+    "JUnit.MainPageTest.searchEarliestAndLatestCoursesTest.executor": "Run",
+    "Maven.java_otus_pro [clean,test,-DforkCount=0...].executor": "Run",
+    "Maven.java_otus_pro [clean].executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "assignment__1",
+    "kotlin-language-version-configured": "true",
+    "last_directory_selection": "C:/Users/skrab/IdeaProjects/java_otus_pro/src/test/java",
+    "last_opened_file_path": "C:/Users/skrab/IdeaProjects/java_otus_pro",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.sourceCode.Java",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\skrab\IdeaProjects\java_otus_pro\src\main\resources" />
@@ -186,7 +192,7 @@
                 <option value="clean" />
                 <option value="test" />
                 <option value="-DforkCount=0" />
-                <option value="-Dtest=MainPageTest#" />
+                <option value="-Dtest=Assigment1#" />
               </list>
             </option>
             <option name="multimoduleDir" />
@@ -214,23 +220,16 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.Assignment1Test.openRandomCategoryTest" />
         <item itemvalue="JUnit.Assignment1Test" />
-        <item itemvalue="JUnit.Assignment1Test.searchEarliestAndLatestCoursesTest" />
+        <item itemvalue="JUnit.Assignment1Test.openRandomCategoryTest" />
         <item itemvalue="JUnit.Assignment1Test.coursesPageTest" />
+        <item itemvalue="JUnit.Assignment1Test.searchEarliestAndLatestCoursesTest" />
         <item itemvalue="JUnit.Assignment1Test.mainPageTest" />
       </list>
     </recent_temporary>
   </component>
   <component name="SeleniumInternalSettingsState">
     <option name="lastUrl" value="https://otus.ru/catalog/courses" />
-  </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="jdk-22-openjdk-22-3183f394aec4-bad0321e" />
-      </set>
-    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -308,7 +307,15 @@
       <option name="project" value="LOCAL" />
       <updated>1727877890359</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Assigment 1.2 -fix due linter">
+      <option name="closed" value="true" />
+      <created>1727937572410</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1727937572410</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

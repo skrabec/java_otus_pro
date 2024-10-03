@@ -8,7 +8,6 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import pages.CoursesPage;
 import pages.LessonCardPage;
 import pages.MainPage;
-
 import java.util.List;
 import java.util.Map;
 
