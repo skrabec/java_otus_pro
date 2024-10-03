@@ -1,13 +1,13 @@
 package pages;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
 import annotations.Path;
 import annotations.PathTemplate;
 import common.AbstractCommon;
 import exceptions.InvalidPathException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-
-import static org.assertj.core.api.Assertions.assertThat;
 
 public abstract class AbstractBasePage<T> extends AbstractCommon<T> {
 
@@ -19,9 +19,6 @@ public abstract class AbstractBasePage<T> extends AbstractCommon<T> {
     public AbstractBasePage(WebDriver driver){
         super(driver);
     }
-
-    //  @FindBy(tagName = "h1")
-    //  private WebElement headerPage;
 
     private String getPath(){
         Path path = getClass().getAnnotation(Path.class);
@@ -53,7 +50,8 @@ public abstract class AbstractBasePage<T> extends AbstractCommon<T> {
         return (T) this;
     }
 
-    public T pageHeaderShouldbeSameAs(String title) {
+    public T pageHeaderShouldbeSameAs(String title) throws InterruptedException {
+        Thread.sleep(1000);
         assertThat(findBy(By.tagName("h1")).getText())
                 .as("Header of page should be {}", title)
                 .isEqualTo(title);

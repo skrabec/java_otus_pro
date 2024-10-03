@@ -1,10 +1,11 @@
 package components.popups;
 
+import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
+
 import annotations.components.Component;
 import components.AbsComponent;
 import org.openqa.selenium.WebDriver;
 
-import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 @Component("internal_component:.//div[./a[contains(@href, '/categories')]]")
 public class PopupHeaderSubMenu extends AbsComponent<PopupHeaderSubMenu> implements IPopUp<PopupHeaderSubMenu> {

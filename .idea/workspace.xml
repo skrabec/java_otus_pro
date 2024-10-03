@@ -4,15 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21dc6ca3-cab8-4aea-ba80-575756339388" name="Changes" comment="Lesson 7">
+    <list default="true" id="21dc6ca3-cab8-4aea-ba80-575756339388" name="Changes" comment="Assigment 1.2 -fix due linter">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/components/AbsComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/components/AbsComponent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/components/popups/PopupHeaderSubMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/components/popups/PopupHeaderSubMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/components/static_components/AbsStaticComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/components/staticcomponents/AbsStaticComponent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/components/static_components/HeaderMenuComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/components/staticcomponents/HeaderMenuComponent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/modules/GuicePageModules.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modules/GuicePageModules.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/factory/WebDriverFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/factory/WebDriverFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/listeners/CommonListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/listeners/CommonListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pages/AbstractBasePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/AbstractBasePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/CoursesPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/CoursesPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pages/MainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/MainPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/waiters/Waiter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/waiters/Waiter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/main/Assignment1Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/main/Assignment1Test.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,8 +25,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="AnnotationType" />
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -62,15 +64,21 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "JUnit.Assignment1Test.coursesPageTest.executor": "Run",
+    "JUnit.Assignment1Test.executor": "Run",
+    "JUnit.Assignment1Test.openRandomCategoryTest.executor": "Run",
+    "JUnit.MainPageTest.coursesPageTest.executor": "Debug",
     "JUnit.MainPageTest.mainPageTest.executor": "Run",
-    "Maven.java_otus_pro [clean,test,-DforkCount=0...].executor": "Debug",
+    "JUnit.MainPageTest.searchEarliestAndLatestCoursesTest.executor": "Run",
+    "Maven.java_otus_pro [clean,test,-DforkCount=0...].executor": "Run",
     "Maven.java_otus_pro [clean].executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "assignment__1",
     "kotlin-language-version-configured": "true",
     "last_directory_selection": "C:/Users/skrab/IdeaProjects/java_otus_pro/src/test/java",
+    "last_opened_file_path": "C:/Users/skrab/IdeaProjects/java_otus_pro",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -79,7 +87,7 @@
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "editor.preferences.tabs",
+    "settings.editor.selected.configurable": "preferences.sourceCode.Java",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -90,7 +98,7 @@
     </key>
   </component>
   <component name="RunManager" selected="Maven.java_otus_pro [clean,test,-DforkCount=0...]">
-    <configuration name="MainPageTest.mainPageTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Assignment1Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="java_otus_pro" />
       <extension name="coverage">
         <pattern>
@@ -99,8 +107,71 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="main" />
-      <option name="MAIN_CLASS_NAME" value="main.MainPageTest" />
+      <option name="MAIN_CLASS_NAME" value="main.Assignment1Test" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Assignment1Test.coursesPageTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="java_otus_pro" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="main.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="main" />
+      <option name="MAIN_CLASS_NAME" value="main.Assignment1Test" />
+      <option name="METHOD_NAME" value="coursesPageTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Assignment1Test.mainPageTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="java_otus_pro" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="main.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="main" />
+      <option name="MAIN_CLASS_NAME" value="main.Assignment1Test" />
       <option name="METHOD_NAME" value="mainPageTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Assignment1Test.openRandomCategoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="java_otus_pro" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="main.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="main" />
+      <option name="MAIN_CLASS_NAME" value="main.Assignment1Test" />
+      <option name="METHOD_NAME" value="openRandomCategoryTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Assignment1Test.searchEarliestAndLatestCoursesTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="java_otus_pro" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="main.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="main" />
+      <option name="MAIN_CLASS_NAME" value="main.Assignment1Test" />
+      <option name="METHOD_NAME" value="searchEarliestAndLatestCoursesTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -121,7 +192,7 @@
                 <option value="clean" />
                 <option value="test" />
                 <option value="-DforkCount=0" />
-                <option value="-Dtest=MainPageTest#" />
+                <option value="-Dtest=Assigment1#" />
               </list>
             </option>
             <option name="multimoduleDir" />
@@ -140,21 +211,25 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="JUnit.MainPageTest.mainPageTest" />
+      <item itemvalue="JUnit.Assignment1Test" />
+      <item itemvalue="JUnit.Assignment1Test.coursesPageTest" />
+      <item itemvalue="JUnit.Assignment1Test.mainPageTest" />
+      <item itemvalue="JUnit.Assignment1Test.openRandomCategoryTest" />
+      <item itemvalue="JUnit.Assignment1Test.searchEarliestAndLatestCoursesTest" />
       <item itemvalue="Maven.java_otus_pro [clean,test,-DforkCount=0...]" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.MainPageTest.mainPageTest" />
+        <item itemvalue="JUnit.Assignment1Test" />
+        <item itemvalue="JUnit.Assignment1Test.openRandomCategoryTest" />
+        <item itemvalue="JUnit.Assignment1Test.coursesPageTest" />
+        <item itemvalue="JUnit.Assignment1Test.searchEarliestAndLatestCoursesTest" />
+        <item itemvalue="JUnit.Assignment1Test.mainPageTest" />
       </list>
     </recent_temporary>
   </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="jdk-22-openjdk-22-3183f394aec4-bad0321e" />
-      </set>
-    </attachedChunks>
+  <component name="SeleniumInternalSettingsState">
+    <option name="lastUrl" value="https://otus.ru/catalog/courses" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -208,7 +283,39 @@
       <option name="project" value="LOCAL" />
       <updated>1727522234424</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Assigment 1.1">
+      <option name="closed" value="true" />
+      <created>1727807193610</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1727807193610</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Assigment 1.1 - refactoring, adding CoursesPage, codestyle fixes">
+      <option name="closed" value="true" />
+      <created>1727808220764</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1727808220764</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Assigment 1.2">
+      <option name="closed" value="true" />
+      <created>1727877890359</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1727877890359</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Assigment 1.2 -fix due linter">
+      <option name="closed" value="true" />
+      <created>1727937572410</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1727937572410</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -229,7 +336,11 @@
     <MESSAGE value="Lesson 5" />
     <MESSAGE value="Lesson 6" />
     <MESSAGE value="Lesson 7" />
-    <option name="LAST_COMMIT_MESSAGE" value="Lesson 7" />
+    <MESSAGE value="Assigment 1.1" />
+    <MESSAGE value="Assigment 1.1 - refactoring, adding CoursesPage, codestyle fixes" />
+    <MESSAGE value="Assigment 1.2" />
+    <MESSAGE value="Assigment 1.2 -fix due linter" />
+    <option name="LAST_COMMIT_MESSAGE" value="Assigment 1.2 -fix due linter" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

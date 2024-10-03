@@ -2,10 +2,10 @@ package pages;
 
 import annotations.Path;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-
 import java.util.List;
 
 @Path("/")
@@ -15,18 +15,29 @@ public class MainPage extends AbstractBasePage<MainPage> {
         super(driver);
     }
 
-    @FindBy(xpath = "//section[./h2]//a[contains(@href, '/lessons')]")
-    private List<WebElement> lessonItems;
+    @FindBy(xpath = "//a[contains(@href, '/categories/')]")
+    private List<WebElement> categories;
 
 
-    public String getLessonTitleByIndex(int index) {
-        return lessonItems.get(--index).findElement(By.xpath(".//h5")).getText();
-    }
+    public String clickRandomCategory() {
+        int randomNumber = (int) (Math.random() * 12) + 1;
 
-    public void clickLessonTitleByTitle(String title) {
-        String lessonCardLocatorTemplate = String.format("//a[not(@class)][contains(@href, '/lessons')][.//*[text()='%s']]", title);
+        JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+        WebElement randomCategory = categories.get(randomNumber);
 
-        findBy(By.xpath(lessonCardLocatorTemplate)).click();
+        String categoryText = (String) jsExecutor.executeScript("return arguments[0].textContent;", randomCategory);
+
+        String cleanCategoryText = categoryText.split("\\(")[0].trim();
+
+        WebElement elementToClick = driver.findElement(By.xpath(
+            String.format("//a[contains(@class, 'sc-1pgqitk-0 dNitgt') and contains(text(), '%s')]", cleanCategoryText)
+        ));
+
+        actions.moveToElement(findBy(By.xpath("//span[@title='Обучение']"))).perform();
+
+        elementToClick.click();
+
+        return cleanCategoryText;
     }
 
 }
