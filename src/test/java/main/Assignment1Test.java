@@ -35,7 +35,19 @@ public class Assignment1Test {
 
     @Test
     public void searchEarliestAndLatestCoursesTest() {
-        Map<String, List<LessonCard>> coursesByDate = coursesPage.open().findEarliestAndLatestCourses();
+        Map<String, List<LessonCard>> coursesByDate = coursesPage
+            .open()
+            .findEarliestAndLatestCourses();
+
         coursesPage.validateCourseData(coursesByDate);
+    }
+
+    @Test
+    public void openRandomCategoryTest() {
+        String categoryName = mainPage
+            .open()
+            .clickRandomCategory();
+
+        coursesPage.validateCategory(categoryName);
     }
 }

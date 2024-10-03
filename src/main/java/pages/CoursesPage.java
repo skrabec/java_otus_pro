@@ -12,12 +12,19 @@ import org.openqa.selenium.support.FindBy;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Locale;
+import java.util.Map;
+import java.util.Optional;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 import static org.assertj.core.api.Assertions.assertThat;
+
+
 
 @Path("/catalog/courses")
 public class CoursesPage extends AbstractBasePage<CoursesPage> {
@@ -139,4 +146,12 @@ public class CoursesPage extends AbstractBasePage<CoursesPage> {
     }
 
 
+    public void validateCategory(String categoryName) {
+        WebElement category = findBy(By.xpath(String.format("//label[text()='%s']", categoryName)));
+        waiter.waitForVisible(category);
+        String checkboxId = category.getAttribute("for");
+        WebElement checkbox = driver.findElement(By.id(checkboxId));
+        boolean isChecked = checkbox.isSelected();
+        assertThat(isChecked).as(String.format("Checkbox for '%s' should be checked", categoryName)).isTrue();
+    }
 }

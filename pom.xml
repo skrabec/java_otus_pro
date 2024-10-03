@@ -85,6 +85,12 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${surefire.version}</version>
                 <configuration>
+                    <properties>
+                        <property>
+                            <name>listener</name>
+                            <value>listeners.CommonListener</value>
+                        </property>
+                    </properties>
                     <systemPropertyVariables>
                         <browser>${browser}</browser>
                         <base.url>https://otus.ru</base.url>
