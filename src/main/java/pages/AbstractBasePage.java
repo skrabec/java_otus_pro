@@ -3,7 +3,6 @@ package pages;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import annotations.Path;
-import annotations.PathTemplate;
 import common.AbstractCommon;
 import exceptions.InvalidPathException;
 import org.openqa.selenium.By;
@@ -33,29 +32,11 @@ public abstract class AbstractBasePage<T> extends AbstractCommon<T> {
         return (T) this;
     }
 
-    public T open(String... data) {
-        PathTemplate pathTemplate = getClass().getAnnotation(PathTemplate.class);
-
-        if (pathTemplate == null) {
-            throw new InvalidPathException();
-        }
-
-        String path = pathTemplate.value();
-        for (int i = 0; i < data.length; i++) {
-            path = path.replace("$" + (i + 1), data[i]);
-        }
-
-        driver.get(baseUrl + path);
-
-        return (T) this;
-    }
-
-    public T pageHeaderShouldbeSameAs(String title) throws InterruptedException {
+    public void pageHeaderShouldBeSameAs(String title) throws InterruptedException {
         Thread.sleep(1000);
         assertThat(findBy(By.tagName("h1")).getText())
                 .as("Header of page should be {}", title)
                 .isEqualTo(title);
 
-        return (T) this;
     }
 }

@@ -29,7 +29,7 @@ public class Assignment1Test {
                 .getLessonTitleByIndex(2);
 
         coursesPage.clickLessonTitleByTitle(lessonTitle);
-        lessonCardPage.pageHeaderShouldbeSameAs(lessonTitle);
+        lessonCardPage.pageHeaderShouldBeSameAs(lessonTitle);
     }
 
     @Test
