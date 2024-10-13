@@ -14,21 +14,21 @@ import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.Collections;
 import java.util.List;
 import java.util.Locale;
-import java.util.Map;
 import java.util.Optional;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
-
-
 @Path("/catalog/courses")
 public class CoursesPage extends AbstractBasePage<CoursesPage> {
     @FindBy(xpath = "//section[2]//a[contains(@href, '/lessons')]")
     private List<WebElement> lessonItems;
+
+    @FindBy(xpath = "//a[contains(@href, '/categories/')]")
+    private List<WebElement> categories;
 
     public CoursesPage(WebDriver driver) {
         super(driver);
@@ -60,29 +60,25 @@ public class CoursesPage extends AbstractBasePage<CoursesPage> {
         }
     }
 
-    public void validateCourseData(Map<String, List<LessonCard>> coursesByDate) {
-        for (Map.Entry<String, List<LessonCard>> entry : coursesByDate.entrySet()) {
-            List<LessonCard> courses = entry.getValue();
+    public void validateCourseData(List<LessonCard> lessonCards) {
+        for (LessonCard course : lessonCards) {
+            String courseUrl = course.getHref();
+            String[] courseDateFormatted = course.getDate().split(",");
 
-            for (LessonCard course : courses) {
-                String courseUrl = course.getHref();
-                String[] courseDateFormatted = course.getDate().split(",");
+            try {
+                Document doc = Jsoup.connect(courseUrl).get();
+                String courseTitle = doc.select("h1").text();
+                String courseStartDateText = doc.selectXpath("(//p[contains(@class, 'sc-1og4wiw-0 sc-3cb1l3-0 gcChXs dgWykw')])[1]").text();
 
-                try {
-                    Document doc = Jsoup.connect(courseUrl).get();
-                    String courseTitle = doc.select("h1").text();
-                    String courseStartDateText = doc.selectXpath("(//p[contains(@class, 'sc-1og4wiw-0 sc-3cb1l3-0 gcChXs dgWykw')])[1]").text();
+                assertThat(course.getName()).isEqualTo(courseTitle);
+                assertThat(courseDateFormatted[0]).isEqualTo(courseStartDateText);
 
-
-                    assertThat(course.getName()).isEqualTo(courseTitle);
-                    assertThat(courseDateFormatted[0]).isEqualTo(courseStartDateText);
-
-                } catch (IOException e) {
-                    System.out.println("Error fetching course data from: " + courseUrl + " - " + e.getMessage());
-                }
+            } catch (IOException e) {
+                System.out.println("Error fetching course data from: " + courseUrl + " - " + e.getMessage());
             }
         }
     }
+
 
     public List<LessonCard> getLessonCards() {
         List<LessonCard> lessonCards = new ArrayList<>();
@@ -107,37 +103,25 @@ public class CoursesPage extends AbstractBasePage<CoursesPage> {
         return lessonCards;
     }
 
-    public Map<String, List<LessonCard>> findEarliestAndLatestCourses() {
+
+    public List<LessonCard> findCourses(boolean isEarly) {
         List<LessonCard> lessonCards = getLessonCards();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d MMMM, yyyy", new Locale("ru"));
 
+        Optional<LessonCard> targetCourse = lessonCards.stream()
+            .filter(card -> !card.getDate().isEmpty())
+            .reduce((a, b) -> {
+                int comparison = extractDateFromText(a.getDate(), formatter).compareTo(extractDateFromText(b.getDate(), formatter));
+                return (isEarly ? comparison <= 0 : comparison >= 0) ? a : b;
+            });
 
-        Map<String, List<LessonCard>> result = new HashMap<>();
-
-        Optional<LessonCard> earliestCourse = lessonCards.stream()
-                .filter(card -> !card.getDate().isEmpty())
-                .reduce((a, b) -> extractDateFromText(a.getDate(), formatter).compareTo(extractDateFromText(b.getDate(), formatter)) <= 0 ? a : b);
-
-        Optional<LessonCard> latestCourse = lessonCards.stream()
-                .filter(card -> !card.getDate().isEmpty())
-                .reduce((a, b) -> extractDateFromText(a.getDate(), formatter).compareTo(extractDateFromText(b.getDate(), formatter)) >= 0 ? a : b);
-
-        earliestCourse.ifPresent(course -> {
-            List<LessonCard> earliestCourses = lessonCards.stream()
-                    .filter(card -> extractDateFromText(card.getDate(), formatter).equals(extractDateFromText(course.getDate(), formatter)))
-                    .collect(Collectors.toList());
-            result.put("Earliest", earliestCourses);
-        });
-
-        latestCourse.ifPresent(course -> {
-            List<LessonCard> latestCourses = lessonCards.stream()
-                    .filter(card -> extractDateFromText(card.getDate(), formatter).equals(extractDateFromText(course.getDate(), formatter)))
-                    .collect(Collectors.toList());
-            result.put("Latest", latestCourses);
-        });
-
-        return result;
+        return targetCourse
+            .map(course -> lessonCards.stream()
+                .filter(card -> extractDateFromText(card.getDate(), formatter).equals(extractDateFromText(course.getDate(), formatter)))
+                .collect(Collectors.toList()))
+            .orElse(Collections.emptyList());
     }
+
 
     private String formatCourseDate(String courseDate) {
         String[] dateParts = courseDate.split(" · ");

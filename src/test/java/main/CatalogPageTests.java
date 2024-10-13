@@ -7,15 +7,11 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import pages.CoursesPage;
 import pages.LessonCardPage;
-import pages.MainPage;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 @ExtendWith(UIExtensions.class)
-public class Assignment1Test {
-    @Inject
-    private MainPage mainPage;
-
+public class CatalogPageTests {
     @Inject
     private LessonCardPage lessonCardPage;
 
@@ -34,19 +30,16 @@ public class Assignment1Test {
 
     @Test
     public void searchEarliestAndLatestCoursesTest() {
-        Map<String, List<LessonCard>> coursesByDate = coursesPage
+        List<LessonCard> allCourses = new ArrayList<>();
+
+        allCourses.addAll(coursesPage
             .open()
-            .findEarliestAndLatestCourses();
+            .findCourses(true));
 
-        coursesPage.validateCourseData(coursesByDate);
-    }
-
-    @Test
-    public void openRandomCategoryTest() {
-        String categoryName = mainPage
+        allCourses.addAll(coursesPage
             .open()
-            .clickRandomCategory();
+            .findCourses(false));
 
-        coursesPage.validateCategory(categoryName);
+        coursesPage.validateCourseData(allCourses);
     }
 }
