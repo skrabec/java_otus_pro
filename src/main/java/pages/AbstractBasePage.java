@@ -11,10 +11,7 @@ import scopes.GuiceScoped;
 
 public abstract class AbstractBasePage<T> extends AbstractCommon<T> {
 
-    private final String baseUrl =
-            !System.getProperty("base.url").endsWith("/")
-                    ? System.getProperty("base.url")
-                    : System.getProperty("base.url").substring(0, System.getProperty("base.url").length() - 1);
+    private final String baseUrl = System.getProperty("base.url", "https://otus.ru");
 
     @Inject
     public AbstractBasePage(GuiceScoped guiceScoped) {

@@ -2,15 +2,13 @@ package main;
 
 import com.google.inject.Inject;
 import data.LessonCard;
-import extensions.UIExtensions;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
 import pages.CoursesPage;
 import pages.LessonCardPage;
 import java.util.ArrayList;
 import java.util.List;
 
-@ExtendWith(UIExtensions.class)
+
 public class CatalogPageTests {
     @Inject
     private LessonCardPage lessonCardPage;
@@ -21,8 +19,8 @@ public class CatalogPageTests {
     @Test
     public void coursesPageTest() throws InterruptedException {
         String lessonTitle = coursesPage
-                .open()
-                .getLessonTitleByIndex(2);
+            .open()
+            .getLessonTitleByIndex(2);
 
         coursesPage.clickLessonTitleByTitle(lessonTitle);
         lessonCardPage.pageHeaderShouldBeSameAs(lessonTitle);
