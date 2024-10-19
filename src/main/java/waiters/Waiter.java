@@ -6,7 +6,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import java.time.Duration;
 
 public class Waiter {
@@ -27,9 +26,5 @@ public class Waiter {
 
     public boolean waitForVisible(WebElement element) {
         return waitForCondition(ExpectedConditions.visibilityOf(element));
-    }
-
-    public boolean waitForInvisible(WebElement element) {
-        return waitForCondition(ExpectedConditions.invisibilityOf(element));
     }
 }
