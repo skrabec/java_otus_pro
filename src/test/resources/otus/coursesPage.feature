@@ -1,4 +1,4 @@
-Feature: Course Page
+Feature: Courses Page
 
   Scenario: Search course by name
     Given Open browser "Chrome"
