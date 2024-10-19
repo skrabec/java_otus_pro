@@ -23,4 +23,10 @@ public class CoursesPageSteps {
     public void validateCourseName(String courseTitle) {
         coursesPage.coursePageIsOpened(courseTitle);
     }
+
+    @Then("Search course by {string}")
+    public void searchCourseByDate(String date) {
+        coursesPage.findCoursesByDateOrLater(date);
+
+    }
 }

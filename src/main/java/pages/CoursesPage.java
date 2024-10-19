@@ -106,6 +106,36 @@ public class CoursesPage extends AbstractBasePage<CoursesPage> {
         return lessonCards;
     }
 
+    public void findCoursesByDateOrLater(String targetDate) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d MMMM, yyyy", new Locale("ru"));
+
+        LocalDate targetLocalDate = LocalDate.parse(targetDate, formatter);
+
+        List<LessonCard> lessonCards = getLessonCards();
+
+        List<LessonCard> filteredCourses = lessonCards.stream()
+            .filter(card -> {
+                if (card.getDate().isEmpty()) {
+                    return false;
+                }
+                LocalDate courseDate = extractDateFromText(card.getDate(), formatter);
+                return !courseDate.isBefore(targetLocalDate); // Keep dates that are equal to or later than the target date
+            })
+            .collect(Collectors.toList());
+
+        if (filteredCourses.isEmpty()) {
+            System.out.println("No courses found on or after the specified date: " + targetDate);
+        } else {
+            System.out.println("Courses found on or after " + targetDate + ":");
+            filteredCourses.forEach(course -> {
+                System.out.println("Course Name: " + course.getName());
+                System.out.println("Course Date: " + course.getDate());
+                System.out.println("--------------");
+            });
+        }
+    }
+
+
 
     public List<LessonCard> findCourses(boolean isEarly) {
         List<LessonCard> lessonCards = getLessonCards();
@@ -130,17 +160,6 @@ public class CoursesPage extends AbstractBasePage<CoursesPage> {
         String[] dateParts = courseDate.split(" · ");
         return dateParts[0];
     }
-
-
-    public void validateCategory(String categoryName) {
-        WebElement category = findBy(By.xpath(String.format("//label[text()='%s']", categoryName)));
-        waiter.waitForVisible(category);
-        String checkboxId = category.getAttribute("for");
-        WebElement checkbox = driver.findElement(By.id(checkboxId));
-        boolean isChecked = checkbox.isSelected();
-        assertThat(isChecked).as(String.format("Checkbox for '%s' should be checked", categoryName)).isTrue();
-    }
-
 
     public void coursePageIsOpened(String title) {
         Assertions.assertEquals((driver.findElement(By.cssSelector("h1")).getText()), title);

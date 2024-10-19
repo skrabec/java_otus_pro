@@ -11,8 +11,4 @@ public class MainPage extends AbstractBasePage<MainPage> {
     public MainPage(GuiceScoped guiceScoped) {
         super(guiceScoped);
     }
-
-    public void findCourseByTitle(String test) {
-
-    }
 }
