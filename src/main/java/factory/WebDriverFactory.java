@@ -2,30 +2,35 @@ package factory;
 
 import exceptions.BrowserNotFoundException;
 import factory.settings.ChromeSettings;
-import listeners.CommonListener;
+import factory.settings.FirefoxSettings;
+import factory.settings.IBrowserSettings;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.support.events.EventFiringDecorator;
-import org.openqa.selenium.support.events.WebDriverListener;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 
 public class WebDriverFactory {
 
-    private final String browserName = System.getProperty("browser");
+    private final String browserName = System.getProperty("browser", "chrome");
 
     public WebDriver create() {
         WebDriver driver;
 
         switch (browserName.trim().toLowerCase()) {
             case "chrome":
+                IBrowserSettings chromeSettings = new ChromeSettings();
+                WebDriverManager.chromedriver().setup();
                 driver = new ChromeDriver((ChromeOptions) new ChromeSettings().settings());
-                break;
+                return driver;
+            case "firefox":
+                WebDriverManager.firefoxdriver().setup();
+                driver = new FirefoxDriver((FirefoxOptions) new FirefoxSettings().settings());
+                return driver;
             default:
                 throw new BrowserNotFoundException(browserName);
         }
-        WebDriverListener listener = new CommonListener();
-
-        return new EventFiringDecorator(listener).decorate(driver);
     }
 
 }

@@ -5,8 +5,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import java.time.Duration;
 
 public class Waiter {
     private WebDriver driver;
@@ -17,7 +15,7 @@ public class Waiter {
 
     public boolean waitForCondition(ExpectedCondition condition) {
         try {
-            new WebDriverWait(driver, Duration.ofSeconds(10)).until(condition);
+            //new WebDriverWait(driver, Duration.ofSeconds(10).toSeconds()).until(condition);
             return true;
         } catch (TimeoutException ignored) {
             return false;
