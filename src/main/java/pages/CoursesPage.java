@@ -7,6 +7,7 @@ import com.google.inject.Inject;
 import data.LessonCard;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
+import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -138,5 +139,10 @@ public class CoursesPage extends AbstractBasePage<CoursesPage> {
         WebElement checkbox = driver.findElement(By.id(checkboxId));
         boolean isChecked = checkbox.isSelected();
         assertThat(isChecked).as(String.format("Checkbox for '%s' should be checked", categoryName)).isTrue();
+    }
+
+
+    public void coursePageIsOpened(String title) {
+        Assertions.assertEquals((driver.findElement(By.cssSelector("h1")).getText()), title);
     }
 }
