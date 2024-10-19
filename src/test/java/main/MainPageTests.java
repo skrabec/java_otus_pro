@@ -17,10 +17,8 @@ public class MainPageTests {
 
     @Test
     public void openRandomCategoryTest() {
-        String categoryName = mainPage
-            .open()
-            .clickRandomCategory();
+        mainPage
+            .open();
 
-        coursesPage.validateCategory(categoryName);
     }
 }

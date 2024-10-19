@@ -3,13 +3,14 @@ package pages;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import annotations.Path;
+import com.google.inject.Inject;
 import data.LessonCard;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import scopes.GuiceScoped;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -30,8 +31,9 @@ public class CoursesPage extends AbstractBasePage<CoursesPage> {
     @FindBy(xpath = "//a[contains(@href, '/categories/')]")
     private List<WebElement> categories;
 
-    public CoursesPage(WebDriver driver) {
-        super(driver);
+    @Inject
+    public CoursesPage(GuiceScoped guiceScoped) {
+        super(guiceScoped);
     }
 
     public String getLessonTitleByIndex(int index) {

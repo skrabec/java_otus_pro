@@ -3,10 +3,11 @@ package pages;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import annotations.Path;
+import com.google.inject.Inject;
 import exceptions.InvalidPathException;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import pageobject.AbstractCommon;
+import scopes.GuiceScoped;
 
 public abstract class AbstractBasePage<T> extends AbstractCommon<T> {
 
@@ -15,8 +16,9 @@ public abstract class AbstractBasePage<T> extends AbstractCommon<T> {
                     ? System.getProperty("base.url")
                     : System.getProperty("base.url").substring(0, System.getProperty("base.url").length() - 1);
 
-    public AbstractBasePage(WebDriver driver){
-        super(driver);
+    @Inject
+    public AbstractBasePage(GuiceScoped guiceScoped) {
+        super(guiceScoped);
     }
 
     private String getPath(){
@@ -37,6 +39,5 @@ public abstract class AbstractBasePage<T> extends AbstractCommon<T> {
         assertThat(findBy(By.tagName("h1")).getText())
                 .as("Header of page should be {}", title)
                 .isEqualTo(title);
-
     }
 }
