@@ -1,13 +1,15 @@
 package pages;
 
 import annotations.PathTemplate;
-import org.openqa.selenium.WebDriver;
+import com.google.inject.Inject;
+import scopes.GuiceScoped;
 
 @PathTemplate("/lessons/$1")
 public class LessonCardPage extends AbstractBasePage<LessonCardPage> {
 
-    public LessonCardPage(WebDriver driver) {
-        super(driver);
+    @Inject
+    public LessonCardPage(GuiceScoped guiceScoped) {
+        super(guiceScoped);
     }
 
 
