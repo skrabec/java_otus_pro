@@ -94,6 +94,7 @@
                     <systemPropertyVariables>
                         <browser>${browser}</browser>
                         <base.url>https://otus.ru</base.url>
+                        <!--                        <remote.url>http://10.0.2.15/wd/hub</remote.url>-->
                     </systemPropertyVariables>
                 </configuration>
             </plugin>

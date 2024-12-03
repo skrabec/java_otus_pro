@@ -8,10 +8,14 @@ import org.openqa.selenium.WebDriver;
 import pages.CoursesPage;
 import pages.LessonCardPage;
 import pages.MainPage;
+import java.net.MalformedURLException;
 
 public class GuicePageModules extends AbstractModule {
 
     private final WebDriver driver = new WebDriverFactory().create();
+
+    public GuicePageModules() throws MalformedURLException {
+    }
 
     @Provides
     private WebDriver getDriver() {
