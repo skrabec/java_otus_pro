@@ -90,11 +90,15 @@
                             <name>listener</name>
                             <value>listeners.CommonListener</value>
                         </property>
+                        <configurationParameters>
+                            junit.jupiter.executions.autodetection.enabled = true
+                            junit.jupiter.execution.parallel.mode.default = concurrent
+                        </configurationParameters>
                     </properties>
                     <systemPropertyVariables>
                         <browser>${browser}</browser>
                         <base.url>https://otus.ru</base.url>
-                        <!--                        <remote.url>http://10.0.2.15/wd/hub</remote.url>-->
+                        <remote.url>http://localhost/wd/hub</remote.url>
                     </systemPropertyVariables>
                 </configuration>
             </plugin>
