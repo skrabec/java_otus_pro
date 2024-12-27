@@ -1,6 +1,7 @@
 package pages;
 
 import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import annotations.Path;
@@ -22,6 +23,9 @@ public class CoursesPage extends AbsBasePage {
 //    public void checkBoxChecked(String name) {
 //        directions.filter(new Locator.FilterOptions().setHasText(name)).click();
 //    }
+
+    Locator locator = page.locator("//h6");
+    List<String> allCoursesBeforeFiltering = locator.allTextContents();
 
     Locator leftSlider = page.locator("div[role='slider'][aria-valuenow='0']");
     Locator rightSlider = page.locator("div[role='slider'][aria-valuenow='15']");
@@ -58,19 +62,40 @@ public class CoursesPage extends AbsBasePage {
         Locator locator = page.locator("//div[contains(@class, 'sc-hrqzy3-0 cYNMRM sc-157icee-1 ieVVRJ')][.//div]");
         List<String> allTexts = locator.allTextContents();
 
-        // Validate each element
         for (String text : allTexts) {
-            // Extract the number of months from the text
             String[] parts = text.split(" · ");
             if (parts.length > 1) {
                 String monthsPart = parts[1].trim();
                 int months = Integer.parseInt(monthsPart.split(" ")[0]);
 
-                // Assert that months are within range 3-10
                 assertTrue(months >= 3 && months <= 10,
                     "Found month value outside range 3-10: " + months + " in text: " + text);
             }
         }
     }
 
+    public void markCheckBox(String name) {
+        page.getByRole(AriaRole.CHECKBOX,
+                new Page.GetByRoleOptions().setName(name))
+            .check();
+    }
+
+    public void validateCheckBoxFilter() {
+        Locator locator = page.locator("//h6");
+        List<String> allCoursesAfterFiltering = locator.allTextContents();
+        assertNotEquals(allCoursesBeforeFiltering, allCoursesAfterFiltering);
+    }
+
+    public void resetFilter() {
+        page.getByRole(AriaRole.BUTTON,
+                new Page.GetByRoleOptions().setName("Очистить фильтры"))
+            .click();
+    }
+
+    public void validateFilterReset() {
+        Locator locator = page.locator("//h6");
+        List<String> allCoursesAfterFilterReset = locator.allTextContents();
+        assertNotEquals(allCoursesBeforeFiltering, allCoursesAfterFilterReset);
+
+    }
 }

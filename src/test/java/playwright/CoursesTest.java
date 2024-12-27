@@ -14,12 +14,14 @@ public class CoursesTest {
     @Test
     public void coursesPageTest() {
         coursesPage.open();
-//        coursesPage.checkBoxChecked("Все направления");
-//        coursesPage.checkBoxChecked("Любой уровень");
-
+        coursesPage.checkBoxChecked("Все направления");
+        coursesPage.checkBoxChecked("Любой уровень");
         coursesPage.moveLeftSliderToValue(3);
         coursesPage.moveRightSliderToValue(10);
         coursesPage.validateSliderFilter();
-        System.out.println("done");
+        coursesPage.markCheckBox("Архитектура");
+        coursesPage.validateCheckBoxFilter();
+        coursesPage.resetFilter();
+        coursesPage.validateFilterReset();
     }
 }
