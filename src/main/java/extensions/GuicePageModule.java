@@ -21,7 +21,7 @@ public class GuicePageModule extends AbstractModule {
     public GuicePageModule() {
         Playwright playwright = Playwright.create();
         Browser browser = playwright.chromium().launch(
-            new BrowserType.LaunchOptions().setHeadless(false));
+            new BrowserType.LaunchOptions().setHeadless(false).setSlowMo(1000));
 
         BrowserContext context = browser.newContext();
 
