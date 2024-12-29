@@ -1,6 +1,5 @@
 package pages;
 
-import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -17,24 +16,11 @@ public class CoursesPage extends AbsBasePage {
         super(page);
     }
 
-    //todo: figure out why locator is not found
-//    Locator directions = page.locator("input[type='checkbox']");
-//
-//    public void checkBoxChecked(String name) {
-//        directions.filter(new Locator.FilterOptions().setHasText(name)).click();
-//    }
-
     Locator locator = page.locator("//h6");
     List<String> allCoursesBeforeFiltering = locator.allTextContents();
 
     Locator leftSlider = page.locator("div[role='slider'][aria-valuenow='0']");
     Locator rightSlider = page.locator("div[role='slider'][aria-valuenow='15']");
-
-    public void checkBoxChecked(String checkBoxName) {
-        assertThat(page.getByRole(AriaRole.CHECKBOX,
-            new Page.GetByRoleOptions().setName(checkBoxName)))
-            .isChecked();
-    }
 
     public void moveLeftSliderToValue(double targetValue) {
         targetValue++;
@@ -72,12 +58,6 @@ public class CoursesPage extends AbsBasePage {
                     "Found month value outside range 3-10: " + months + " in text: " + text);
             }
         }
-    }
-
-    public void markCheckBox(String name) {
-        page.getByRole(AriaRole.CHECKBOX,
-                new Page.GetByRoleOptions().setName(name))
-            .check();
     }
 
     public void validateCheckBoxFilter() {

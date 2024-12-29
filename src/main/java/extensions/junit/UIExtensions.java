@@ -28,7 +28,7 @@ public class UIExtensions implements BeforeEachCallback, AfterEachCallback {
     }
 
     @Override
-    public void afterEach(ExtensionContext context) throws Exception {
+    public void afterEach(ExtensionContext context) {
         injector.getProvider(BrowserContext.class).get().tracing()
             .stop(new Tracing.StopOptions().setPath(Paths.get(timestamp + "_trace.zip")));
     }
