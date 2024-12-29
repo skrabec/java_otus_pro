@@ -11,6 +11,8 @@ import com.microsoft.playwright.Playwright;
 import com.microsoft.playwright.Tracing;
 import pages.ClickHousePage;
 import pages.CoursesPage;
+import pages.CustomCoursesPage;
+import pages.ForBusinessPage;
 import pages.MainPage;
 import pages.TeacherPage;
 
@@ -29,8 +31,7 @@ public class GuicePageModule extends AbstractModule {
             .tracing()
             .start(new Tracing.StartOptions()
                 .setScreenshots(false)
-                .setSnapshots(false)
-                .setSources(false));
+                .setSnapshots(false));
 
         this.page = context.newPage();
         this.context = context;
@@ -65,6 +66,18 @@ public class GuicePageModule extends AbstractModule {
     @Provides
     public CoursesPage getCoursesPage() {
         return new CoursesPage(page);
+    }
+
+    @Singleton
+    @Provides
+    public ForBusinessPage getForBusinessPage() {
+        return new ForBusinessPage(page);
+    }
+
+    @Singleton
+    @Provides
+    public CustomCoursesPage getCustomCoursesPage() {
+        return new CustomCoursesPage(page);
     }
 
 }
