@@ -53,8 +53,8 @@
                 <configuration>
                     <systemPropertyVariables>
                         <base.url>https://otus.ru</base.url>
-                        <email>default@email.com</email>
-                        <password>defaultpassword</password>
+                        <email>EMAIL</email>
+                        <password>PASSWORD</password>
                     </systemPropertyVariables>
                 </configuration>
             </plugin>
