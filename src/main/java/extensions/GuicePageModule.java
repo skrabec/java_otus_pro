@@ -13,8 +13,7 @@ import pages.ClickHousePage;
 import pages.CoursesPage;
 import pages.CustomCoursesPage;
 import pages.ForBusinessPage;
-import pages.MainPage;
-import pages.TeacherPage;
+import pages.SubscriptionPage;
 
 public class GuicePageModule extends AbstractModule {
     private Page page;
@@ -43,19 +42,6 @@ public class GuicePageModule extends AbstractModule {
         return context;
     }
 
-
-    @Singleton
-    @Provides
-    public MainPage getMainPage() {
-        return new MainPage(page);
-    }
-
-    @Singleton
-    @Provides
-    public TeacherPage getTeacherPage() {
-        return new TeacherPage(page);
-    }
-
     @Singleton
     @Provides
     public ClickHousePage getClickHousePage() {
@@ -78,6 +64,12 @@ public class GuicePageModule extends AbstractModule {
     @Provides
     public CustomCoursesPage getCustomCoursesPage() {
         return new CustomCoursesPage(page);
+    }
+
+    @Singleton
+    @Provides
+    public SubscriptionPage getSubscriptionPage() {
+        return new SubscriptionPage(page);
     }
 
 }
