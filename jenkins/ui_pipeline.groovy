@@ -30,28 +30,31 @@ pipeline {
         }
 
         stage('Run Tests') {
+            steps {
+                script {
+                    def status = sh(
+                            script: "mvn test -DBROWSER=${env.BROWSER} -DBASE_URL=${env.BASE_URL}",
+                            returnStatus: true
+                    )
 
-
-            status = sh (
-                script: 'mvn test -DBROWSER=$env.BROWSER -DBASE_URL=$env.BASE_URL',
-                returnStatus: true
-            )
-
-            if (status > 0) {
-                currentBuild.status = 'UNSTABLE'
+                    if (status > 0) {
+                        currentBuild.result = 'UNSTABLE'
+                    }
+                }
             }
-
         }
 
         stage('Publish allure report') {
-            allure([
-                disabled: true,
-                includeProperties: false,
-                jdk: '',
-                report: './target/allure-results',
-                reportBuildPolicy: 'ALWAYS'
-            ])
-
+            steps {
+                allure([
+                        disabled: false,
+                        includeProperties: false,
+                        jdk: '',
+                        results: [[path: './target/allure-results']],
+                        report: 'allure-report',
+                        reportBuildPolicy: 'ALWAYS'
+                ])
+            }
         }
     }
 
