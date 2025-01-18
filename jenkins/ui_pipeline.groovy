@@ -1,6 +1,12 @@
 pipeline {
     agent any
 
+    environment {
+        BROWSER = 'chrome'
+        BASE_URL = 'https://otus.ru'
+        SELENOID_URL = 'http://selenoid:4444/wd/hub'
+    }
+
     stages {
         stage('Checkout') {
             steps {
