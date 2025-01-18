@@ -30,9 +30,28 @@ pipeline {
         }
 
         stage('Run Tests') {
-            steps {
-                sh 'mvn clean test'
+
+
+            status = sh (
+                script: 'mvn test -DBROWSER=$env.BROWSER -DBASE_URL=$env.BASE_URL',
+                returnStatus: true
+            )
+
+            if (status > 0) {
+                currentBuild.status = 'UNSTABLE'
             }
+
+        }
+
+        stage('Publish allure report') {
+            allure([
+                disabled: true,
+                includeProperties: false,
+                jdk: '',
+                report: './target/allure-results',
+                reportBuildPolicy: 'ALWAYS'
+            ])
+
         }
     }
 
