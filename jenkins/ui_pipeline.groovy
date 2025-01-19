@@ -17,15 +17,11 @@ pipeline {
         stage('Validate Dockerfile') {
             steps {
                 script {
-                    // Check if Dockerfile exists
                     if (!fileExists('Dockerfile')) {
                         error "Dockerfile not found in the repository root"
                     }
 
-                    // Read Dockerfile content
                     def dockerfile = readFile('Dockerfile')
-
-                    // Check for FROM instruction
                     if (!dockerfile.toLowerCase().trim().contains('from ')) {
                         error "Dockerfile validation failed: No source image provided with FROM instruction"
                     }
@@ -39,7 +35,13 @@ pipeline {
             steps {
                 script {
                     def status = sh(
-                            script: "mvn test -DBROWSER=${env.BROWSER} -DBASE_URL=${env.BASE_URL}",
+                            script: """
+                            mvn clean test \
+                            -DBROWSER=${env.BROWSER} \
+                            -DBASE_URL=${env.BASE_URL} \
+                            -DSELENOID_URL=${env.SELENOID_URL} \
+                            -Dallure.results.directory=target/allure-results
+                        """,
                             returnStatus: true
                     )
 
@@ -50,26 +52,41 @@ pipeline {
             }
         }
 
+        stage('Verify Allure Results') {
+            steps {
+                sh 'ls -la target/allure-results || true'
+            }
+        }
+
         stage('Publish allure report') {
             steps {
-                allure([
-                        disabled: false,
-                        includeProperties: false,
-                        jdk: '',
-                        results: [[path: './target/allure-results']],
-                        report: 'allure-report',
-                        reportBuildPolicy: 'ALWAYS'
-                ])
+                script {
+                    allure([
+                            includeProperties: true,
+                            jdk: '',
+                            properties: [],
+                            reportBuildPolicy: 'ALWAYS',
+                            results: [[path: 'target/allure-results']],
+                            report: 'target/allure-report'
+                    ])
+                }
             }
         }
     }
 
     post {
         always {
-            cleanWs()
+            script {
+                try {
+                    archiveArtifacts artifacts: 'target/allure-results/**'
+                } catch (Exception e) {
+                    echo "Failed to archive Allure results: ${e.message}"
+                }
+                cleanWs()
+            }
         }
         failure {
-            echo 'Pipeline failed during Dockerfile validation'
+            echo 'Pipeline failed during execution'
         }
     }
 }
