@@ -39,7 +39,7 @@ pipeline {
                             mvn clean test \
                             -DBROWSER=${env.BROWSER} \
                             -DBASE_URL=${env.BASE_URL} \
-                            -DSELENOID_URL=${env.SELENOID_URL} \
+                            -Dremote.url=http://selenoid:4444/wd/hub \
                             -Dallure.results.directory=target/allure-results
                         """,
                             returnStatus: true
