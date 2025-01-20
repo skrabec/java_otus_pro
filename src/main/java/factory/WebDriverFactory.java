@@ -13,7 +13,6 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Map;
 
 public class WebDriverFactory {
 
@@ -21,8 +20,8 @@ public class WebDriverFactory {
 
     public WebDriver create() throws MalformedURLException {
         WebDriver driver;
-        Map<String, String> mobileEmulation = new HashMap<>();
-        mobileEmulation.put("deviceName", "Nexus 5");
+//        Map<String, String> mobileEmulation = new HashMap<>();
+//        mobileEmulation.put("deviceName", "Nexus 5");
 
 
 
@@ -32,7 +31,7 @@ public class WebDriverFactory {
             options.addArguments("--disable-background-timer-throttling");
             options.addArguments("--disable-backgrounding-occluded-windows");
             options.addArguments("--disable-renderer-backgrounding");
-            options.setExperimentalOption("mobileEmulation", mobileEmulation);
+            //options.setExperimentalOption("mobileEmulation", mobileEmulation);
             options.setCapability("browserVersion", "128.0");
             options.setCapability("selenoid:options", new HashMap<String, Object>() {{
 
