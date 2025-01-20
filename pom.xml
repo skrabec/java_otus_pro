@@ -145,7 +145,7 @@
                     <systemPropertyVariables>
                         <browser>${browser}</browser>
                         <base.url>https://otus.ru</base.url>
-                        <remote.url>http://selenoid:4444/wd/hub</remote.url>
+                        <remote.url>http://45.132.17.22:4444/wd/hub</remote.url>
                     </systemPropertyVariables>
                 </configuration>
                 <dependencies>
