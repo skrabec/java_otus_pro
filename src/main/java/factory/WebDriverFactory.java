@@ -1,14 +1,8 @@
 package factory;
 
-import exceptions.BrowserNotFoundException;
-import factory.settings.ChromeSettings;
-import listeners.CommonListener;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import org.openqa.selenium.support.events.EventFiringDecorator;
-import org.openqa.selenium.support.events.WebDriverListener;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -24,15 +18,14 @@ public class WebDriverFactory {
 //        mobileEmulation.put("deviceName", "Nexus 5");
 
 
-
-        if (!System.getProperty("remote.url").isEmpty()) {
+        //if (!System.getProperty("http://45.132.17.22:4444/wd/hub").isEmpty()) {
             ChromeOptions options = new ChromeOptions();
             options.addArguments("--start-maximized");
             options.addArguments("--disable-background-timer-throttling");
             options.addArguments("--disable-backgrounding-occluded-windows");
             options.addArguments("--disable-renderer-backgrounding");
             //options.setExperimentalOption("mobileEmulation", mobileEmulation);
-            options.setCapability("browserVersion", "128.0");
+        options.setCapability("browserVersion", "132.0");
             options.setCapability("selenoid:options", new HashMap<String, Object>() {{
 
                 put("enableVNC", true);
@@ -51,18 +44,18 @@ public class WebDriverFactory {
                 put("enableVideo", false);
             }});
             return new RemoteWebDriver(new URL("http://45.132.17.22:4444/wd/hub"), options);
-        }
+        //}
 
-        switch (browserName.trim().toLowerCase()) {
-            case "chrome":
-                driver = new ChromeDriver((ChromeOptions) new ChromeSettings().settings());
-                break;
-            default:
-                throw new BrowserNotFoundException(browserName);
-        }
-        WebDriverListener listener = new CommonListener();
-
-        return new EventFiringDecorator(listener).decorate(driver);
+//        switch (browserName.trim().toLowerCase()) {
+//            case "chrome":
+//                driver = new ChromeDriver((ChromeOptions) new ChromeSettings().settings());
+//                break;
+//            default:
+//                throw new BrowserNotFoundException(browserName);
+//        }
+//        WebDriverListener listener = new CommonListener();
+//
+//        return new EventFiringDecorator(listener).decorate(driver);
     }
 
 }
