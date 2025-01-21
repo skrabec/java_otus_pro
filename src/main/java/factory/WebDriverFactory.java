@@ -18,7 +18,7 @@ public class WebDriverFactory {
 //        mobileEmulation.put("deviceName", "Nexus 5");
 
 
-        //if (!System.getProperty("http://45.132.17.22:4444/wd/hub").isEmpty()) {
+        //if (!System.getProperty("http://45.132.17.22:8081/wd/hub").isEmpty()) {
             ChromeOptions options = new ChromeOptions();
             options.addArguments("--start-maximized");
             options.addArguments("--disable-background-timer-throttling");
