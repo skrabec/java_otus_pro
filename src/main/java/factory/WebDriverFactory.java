@@ -25,7 +25,7 @@ public class WebDriverFactory {
             options.addArguments("--disable-backgrounding-occluded-windows");
             options.addArguments("--disable-renderer-backgrounding");
             //options.setExperimentalOption("mobileEmulation", mobileEmulation);
-        options.setCapability("browserVersion", "128.0");
+        options.setCapability("browserVersion", "132.0");
             options.setCapability("selenoid:options", new HashMap<String, Object>() {{
 
                 put("enableVNC", true);
