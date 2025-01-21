@@ -25,7 +25,7 @@ public class WebDriverFactory {
             options.addArguments("--disable-backgrounding-occluded-windows");
             options.addArguments("--disable-renderer-backgrounding");
             //options.setExperimentalOption("mobileEmulation", mobileEmulation);
-        options.setCapability("browserVersion", "latest");
+        options.setCapability("browserVersion", "131");
             options.setCapability("selenoid:options", new HashMap<String, Object>() {{
 
                 put("enableVNC", true);
@@ -43,7 +43,7 @@ public class WebDriverFactory {
                 /* How to enable video recording */
                 put("enableVideo", false);
             }});
-            return new RemoteWebDriver(new URL("http://45.132.17.22:4444/wd/hub"), options);
+        return new RemoteWebDriver(new URL("http://45.132.17.22:8081/wd/hub"), options);
         //}
 
 //        switch (browserName.trim().toLowerCase()) {
