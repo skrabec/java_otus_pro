@@ -4,7 +4,7 @@ pipeline {
     environment {
         BROWSER = 'chrome'
         BASE_URL = 'https://otus.ru'
-        SELENOID_URL = 'http://45.132.17.22:8081/wd/hub/'
+        SELENOID_URL = 'http://45.132.17.22:4444/wd/hub/'
     }
 
     stages {
@@ -39,7 +39,7 @@ pipeline {
                             mvn clean test \
                             -DBROWSER=${env.BROWSER} \
                             -DBASE_URL=${env.BASE_URL} \
-                            -Dremote.url=http://45.132.17.22:8081/wd/hub/ \
+                            -Dremote.url=http://45.132.17.22:4444/wd/hub/ \
                             -Dallure.results.directory=target/allure-results
                         """,
                             returnStatus: true
