@@ -50,7 +50,7 @@ public class WebDriverFactory {
                 /* How to enable video recording */
                 put("enableVideo", false);
             }});
-            return new RemoteWebDriver(new URL("http://45.132.17.22:4444/wd/hub"), options);
+            return new RemoteWebDriver(new URL("http://45.132.17.22/selenoid/wd/hub"), options);
         }
 
         switch (browserName.trim().toLowerCase()) {
