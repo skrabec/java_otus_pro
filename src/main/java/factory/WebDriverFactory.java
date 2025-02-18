@@ -61,6 +61,7 @@ public class WebDriverFactory {
         }
         WebDriverListener listener = new CommonListener();
 
+
         return new EventFiringDecorator(listener).decorate(driver);
     }
 
